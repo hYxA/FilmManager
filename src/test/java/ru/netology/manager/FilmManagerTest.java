@@ -13,7 +13,7 @@ class FilmManagerTest {
         FilmItem will = new FilmItem(2,15, "will");
         FilmItem coming = new FilmItem(3,15, "coming");
         FilmItem soon = new FilmItem(4,15, "soon");
-        manager.addFilm(santa);
+        FilmManager.addFilm(santa);
     }
 
     @Test
