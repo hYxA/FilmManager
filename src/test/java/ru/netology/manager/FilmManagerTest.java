@@ -6,6 +6,7 @@ import ru.netology.domain.FilmItem;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FilmManagerTest {
+    FilmManager manager = new FilmManager();
 
     @Test
     void shouldAddFilm() {
@@ -13,10 +14,17 @@ class FilmManagerTest {
         FilmItem will = new FilmItem(2,15, "will");
         FilmItem coming = new FilmItem(3,15, "coming");
         FilmItem soon = new FilmItem(4,15, "soon");
-        FilmManager.addFilm(santa);
+        manager.addFilm(santa);
+        manager.addFilm(will);
+        manager.addFilm(coming);
+        manager.addFilm(soon);
+
+
     }
 
     @Test
     void shouldGetAll() {
     }
+
+
 }
