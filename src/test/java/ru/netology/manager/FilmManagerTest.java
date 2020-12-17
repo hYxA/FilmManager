@@ -2,21 +2,21 @@ package ru.netology.manager;
 
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.FilmItem;
-import ru.netology.domain.FilmItem;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class FilmManagerTest {
-    private FilmItem[] items = new FilmItem[0];
-
 
     @Test
-    void addFilm(FilmItem[] items) {
-        int expectedLength = items.length + 1;
-        addFilm(items);
-        assertEquals(expectedLength, items.length);
+    void shouldAddFilm() {
+        FilmItem santa = new FilmItem(1,15, "santa");
+        FilmItem will = new FilmItem(2,15, "will");
+        FilmItem coming = new FilmItem(3,15, "coming");
+        FilmItem soon = new FilmItem(4,15, "soon");
+        manager.addFilm(santa);
     }
 
     @Test
-    void getAll() {
+    void shouldGetAll() {
     }
 }

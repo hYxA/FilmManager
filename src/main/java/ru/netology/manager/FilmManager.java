@@ -7,6 +7,7 @@ import static java.lang.System.*;
 public class FilmManager {
     private FilmItem[] items = new FilmItem[0];
 
+
     /**
      * Добавление фильма
      */
@@ -35,6 +36,7 @@ public class FilmManager {
         for (int i = 0; i < count; i++) {
             int index = items.length - i - 1;
             result[i] = items[index];
+            System.out.println(result[i]);
         }
         return result;
     }
