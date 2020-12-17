@@ -25,11 +25,14 @@ public class FilmManager {
     }
 
     public FilmItem[] getAll() {
+        // определение количества фильмов
+        int count = Math.min(items.length, 10);
+
         // создание массива для хранения результата
-        FilmItem[] result = new FilmItem[items.length];
+        FilmItem[] result = new FilmItem[count];
 
         // выдаём массив в обратном порядке
-        for (int i = 0; i < result.length; i++) {
+        for (int i = 0; i < count; i++) {
             int index = items.length - i - 1;
             result[i] = items[index];
         }
