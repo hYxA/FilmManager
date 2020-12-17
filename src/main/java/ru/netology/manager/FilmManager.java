@@ -23,4 +23,16 @@ public class FilmManager {
         tmp[lastIndex] = item;
         items = tmp;
     }
+
+    public FilmItem[] getAll() {
+        // создание массива для хранения результата
+        FilmItem[] result = new FilmItem[items.length];
+
+        // выдаём массив в обратном порядке
+        for (int i = 0; i < result.length; i++) {
+            int index = items.length - i - 1;
+            result[i] = items[index];
+        }
+        return result;
+    }
 }
