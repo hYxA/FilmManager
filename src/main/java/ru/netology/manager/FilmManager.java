@@ -6,6 +6,7 @@ import static java.lang.System.*;
 
 public class FilmManager {
     private FilmItem[] items = new FilmItem[0];
+    static int count;
 
 
     /**
@@ -27,7 +28,7 @@ public class FilmManager {
 
     public FilmItem[] getAll() {
         // определение количества фильмов
-        int count = Math.min(items.length, 10);
+        count = Math.min(items.length, 10);
 
         // создание массива для хранения результата
         FilmItem[] result = new FilmItem[count];
