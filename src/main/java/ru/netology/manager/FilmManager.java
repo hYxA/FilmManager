@@ -1,6 +1,6 @@
 package ru.netology.manager;
 
-import lombok.ToString;
+import org.junit.jupiter.api.BeforeEach;
 import ru.netology.domain.FilmItem;
 
 import static java.lang.System.*;
@@ -9,7 +9,6 @@ public class FilmManager {
     private FilmItem[] items = new FilmItem[0];
     static int count;
     int id;
-
 
     /**
      * Добавление фильма
@@ -63,6 +62,47 @@ public class FilmManager {
         if (id > items.length) {
             out.println("Не существует объекта с таким ID");
         } else {
-            out.println(items[id]);}
+            out.println(items[id]);
+        }
     }
+
+    /**
+     * удаляет объект по ID
+     */
+    public void removeByID(int id) {
+        if (id > items.length) {
+
+            out.println("Не существует объекта с таким ID");
+
+        } else {
+
+            int index = 0;
+            int length = items.length - 1;
+            FilmItem[] resultByRemove = new FilmItem[length];
+
+            for (FilmItem item : items) {
+
+                if (item.getId() != id) {
+                    resultByRemove[index] = item;
+                    index++;
+                }
+            }
+        }
+    }
+
+    /**
+     * создание тестового шаблона
+     */
+    @BeforeEach
+    public void createTemplate() {
+        FilmItem santa = new FilmItem(1, 115, "santa");
+        FilmItem will = new FilmItem(2, 125, "will");
+        FilmItem coming = new FilmItem(3, 135, "coming");
+        FilmItem soon = new FilmItem(4, 145, "soon");
+        addFilm(santa);
+        addFilm(will);
+        addFilm(coming);
+        addFilm(soon);
+    }
+
 }

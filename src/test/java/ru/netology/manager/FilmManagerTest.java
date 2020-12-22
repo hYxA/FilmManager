@@ -12,10 +12,10 @@ class FilmManagerTest {
 
     @Test
     void shouldAddFilm() {
-        FilmItem santa = new FilmItem(1,115, "santa");
-        FilmItem will = new FilmItem(2,125, "will");
-        FilmItem coming = new FilmItem(3,135, "coming");
-        FilmItem soon = new FilmItem(4,145, "soon");
+        FilmItem santa = new FilmItem(1, 115, "santa");
+        FilmItem will = new FilmItem(2, 125, "will");
+        FilmItem coming = new FilmItem(3, 135, "coming");
+        FilmItem soon = new FilmItem(4, 145, "soon");
         manager.addFilm(santa);
         manager.addFilm(will);
         manager.addFilm(coming);
@@ -29,36 +29,32 @@ class FilmManagerTest {
     }
 
     @Test
-    void shouldFindAll(){
-        FilmItem santa = new FilmItem(1,115, "santa");
-        FilmItem will = new FilmItem(2,125, "will");
-        FilmItem coming = new FilmItem(3,135, "coming");
-        FilmItem soon = new FilmItem(4,145, "soon");
-        manager.addFilm(santa);
-        manager.addFilm(will);
-        manager.addFilm(coming);
-        manager.addFilm(soon);
-
+    void shouldFindAll() {
+        manager.createTemplate();
         manager.findAll();
     }
 
     @Test
     void shouldFindByID() {
-        FilmItem santa = new FilmItem(1,115, "santa");
-        FilmItem will = new FilmItem(2,125, "will");
-        FilmItem coming = new FilmItem(3,135, "coming");
-        FilmItem soon = new FilmItem(4,145, "soon");
-        manager.addFilm(santa);
-        manager.addFilm(will);
-        manager.addFilm(coming);
-        manager.addFilm(soon);
-
+        manager.createTemplate();
         id = 123;
         manager.findById(id);
     }
 
+    @Test
+    void removeByID(int id) {
+        manager.createTemplate();
+        id = 1;
+        removeByID(id);
 
+    }
 
+    @Test
+    void doNotRemoveByID(int id) {
+        manager.createTemplate();
+        id = 666;
+        removeByID(id);
 
+    }
 
 }
