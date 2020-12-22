@@ -26,6 +26,9 @@ public class FilmManager {
         items = tmp;
     }
 
+    /**
+     * Выдаёт последние 10 добавленных фильмов
+     */
     public FilmItem[] getAll() {
         // определение количества фильмов
         count = Math.min(items.length, 10);
@@ -40,5 +43,14 @@ public class FilmManager {
             System.out.println(result[i]);
         }
         return result;
+    }
+
+    /**
+     * возвращает массив всех хранящихся в массиве объектов
+     */
+    public void findAll() {
+        for (int i = 0; i < items.length; i++) {
+            out.println(items[i]);
+        }
     }
 }
