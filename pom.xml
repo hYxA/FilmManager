@@ -73,6 +73,16 @@
                                         </limit>
                                     </limits>
                                 </rule>
+
+                                <rule>
+                                    <element>METHOD</element>
+                                    <exclude>getAll</exclude>
+                                </rule>
+                                <rule>
+                                    <element>CLASS</element>
+                                    <exclude>FilmItem</exclude>
+                                </rule>
+
                             </rules>
                         </configuration>
                     </execution>

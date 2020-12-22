@@ -1,5 +1,6 @@
 package ru.netology.manager;
 
+import lombok.ToString;
 import ru.netology.domain.FilmItem;
 
 import static java.lang.System.*;
@@ -7,6 +8,7 @@ import static java.lang.System.*;
 public class FilmManager {
     private FilmItem[] items = new FilmItem[0];
     static int count;
+    int id;
 
 
     /**
@@ -49,8 +51,18 @@ public class FilmManager {
      * возвращает массив всех хранящихся в массиве объектов
      */
     public void findAll() {
-        for (int i = 0; i < items.length; i++) {
-            out.println(items[i]);
+        for (FilmItem item : items) {
+            out.println(item);
         }
+    }
+
+    /**
+     * возвращает объект по ID
+     */
+    public void findById(int id) {
+        if (id > items.length) {
+            out.println("Не существует объекта с таким ID");
+        } else {
+            out.println(items[id]);}
     }
 }
