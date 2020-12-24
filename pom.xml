@@ -78,6 +78,17 @@
                                 <goal>check</goal>
                             </goals>
                             <rules>
+
+                                <rule>
+                                    <element>METHOD</element>
+                                    <exclude>getAll</exclude>
+                                </rule>
+
+                                <rule>
+                                    <element>CLASS</element>
+                                    <exclude>FilmItem</exclude>
+                                </rule>
+
                                 <rule>
                                     <limits>
                                         <limit>
@@ -88,14 +99,7 @@
                                     </limits>
                                 </rule>
 
-                                <rule>
-                                    <element>METHOD</element>
-                                    <exclude>getAll</exclude>
-                                </rule>
-                                <rule>
-                                    <element>CLASS</element>
-                                    <exclude>FilmItem</exclude>
-                                </rule>
+
 
                             </rules>
                         </configuration>
