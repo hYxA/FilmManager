@@ -37,6 +37,13 @@ class FilmManagerTest {
     @Test
     void shouldFindByID() {
         manager.createTemplate();
+        id = 1;
+        manager.findById(id);
+    }
+
+    @Test
+    void shouldNOTFindByID() {
+        manager.createTemplate();
         id = 123;
         manager.findById(id);
     }
@@ -55,6 +62,16 @@ class FilmManagerTest {
         id = 666;
         removeByID(id);
 
+    }
+
+    @Test
+    void shouldRemoveAll() {
+        manager.removeAll();
+        int exceptedLength = 0;
+
+        FilmItem[] actual = manager.getAll();
+
+        assertEquals(exceptedLength, actual.length);
     }
 
 }

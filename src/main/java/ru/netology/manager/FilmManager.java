@@ -105,4 +105,9 @@ public class FilmManager {
         addFilm(soon);
     }
 
+    public void removeAll() {
+        FilmItem[] nullArray = new FilmItem[0];
+        items = nullArray;
+    }
+
 }
