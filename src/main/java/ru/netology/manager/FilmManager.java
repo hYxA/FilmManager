@@ -9,7 +9,7 @@ public class FilmManager {
     private FilmItem[] items = new FilmItem[0];
     static int count;
     int id;
-    int countFilm;
+
 
     /**
      * Добавление фильма
