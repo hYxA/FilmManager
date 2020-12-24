@@ -49,18 +49,18 @@ class FilmManagerTest {
     }
 
     @Test
-    void removeByID(int id) {
+    void removeByID() {
         manager.createTemplate();
-        id = 1;
-        removeByID(id);
+        int id = 1;
+        manager.removeByID(id);
 
     }
 
     @Test
-    void doNotRemoveByID(int id) {
+    void doNotRemoveByID() {
         manager.createTemplate();
-        id = 666;
-        removeByID(id);
+        int id = 666;
+        manager.removeByID(id);
 
     }
 

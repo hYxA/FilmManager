@@ -9,6 +9,7 @@ public class FilmManager {
     private FilmItem[] items = new FilmItem[0];
     static int count;
     int id;
+    int countFilm;
 
     /**
      * Добавление фильма
@@ -43,6 +44,27 @@ public class FilmManager {
             result[i] = items[index];
             System.out.println(result[i]);
         }
+        out.println("------------------");
+        return result;
+    }
+
+    /**
+     * Выдаёт последние *countFilm* добавленных фильмов
+     */
+    public FilmItem[] getAll(int countFilm) {
+        // определение количества фильмов
+        count = Math.min(items.length, countFilm);
+
+        // создание массива для хранения результата
+        FilmItem[] result = new FilmItem[count];
+
+        // выдаём массив в обратном порядке
+        for (int i = 0; i < count; i++) {
+            int index = items.length - i - 1;
+            result[i] = items[index];
+            System.out.println(result[i]);
+        }
+        out.println("------------------");
         return result;
     }
 
@@ -53,6 +75,7 @@ public class FilmManager {
         for (FilmItem item : items) {
             out.println(item);
         }
+        out.println("------------------");
     }
 
     /**
@@ -64,6 +87,7 @@ public class FilmManager {
         } else {
             out.println(items[id]);
         }
+        out.println("------------------");
     }
 
     /**
@@ -73,6 +97,7 @@ public class FilmManager {
         if (id > items.length) {
 
             out.println("Не существует объекта с таким ID");
+            out.println("------------------");
 
         } else {
 
@@ -105,6 +130,9 @@ public class FilmManager {
         addFilm(soon);
     }
 
+    /**
+     * удаление всех элементов
+     */
     public void removeAll() {
         FilmItem[] nullArray = new FilmItem[0];
         items = nullArray;
