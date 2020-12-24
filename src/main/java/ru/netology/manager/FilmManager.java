@@ -42,9 +42,7 @@ public class FilmManager {
         for (int i = 0; i < count; i++) {
             int index = items.length - i - 1;
             result[i] = items[index];
-            System.out.println(result[i]);
         }
-        out.println("------------------");
         return result;
     }
 
@@ -62,9 +60,7 @@ public class FilmManager {
         for (int i = 0; i < count; i++) {
             int index = items.length - i - 1;
             result[i] = items[index];
-            System.out.println(result[i]);
         }
-        out.println("------------------");
         return result;
     }
 
@@ -72,10 +68,12 @@ public class FilmManager {
      * возвращает массив всех хранящихся в массиве объектов
      */
     public void findAll() {
-        for (FilmItem item : items) {
-            out.println(item);
+        // создание массива для хранения результата
+        FilmItem[] result = new FilmItem[items.length];
+        int index = items.length - 1;
+        for (int i = 0; i < index; i++) {
+            result[i] = items[i];
         }
-        out.println("------------------");
     }
 
     /**
@@ -84,10 +82,11 @@ public class FilmManager {
     public void findById(int id) {
         if (id > items.length) {
             out.println("Не существует объекта с таким ID");
+            out.println("------------------");
         } else {
-            out.println(items[id]);
+            FilmItem[] result = new FilmItem[1];
+            result[0] = items[id];
         }
-        out.println("------------------");
     }
 
     /**
