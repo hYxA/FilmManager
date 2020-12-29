@@ -9,6 +9,8 @@ public class FilmManager {
     private FilmItem[] items = new FilmItem[0];
     static int count;
     int id;
+    FilmItem[] result = new FilmItem[0];
+    FilmItem[] nonPrivateResult = items;
 
 
     /**

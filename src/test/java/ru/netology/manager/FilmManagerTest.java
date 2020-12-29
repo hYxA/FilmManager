@@ -107,4 +107,13 @@ class FilmManagerTest {
         assertEquals(exceptedLength, actual.length);
     }
 
+    @Test
+    void shouldGetAll() {
+        manager.getAll();
+        FilmItem expectedResult[] = manager.nonPrivateResult;
+        FilmItem actualResult[] = manager.result;
+
+        assertArrayEquals(expectedResult, actualResult);
+    }
+
 }
